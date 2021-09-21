@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,48 +8,41 @@
     <title>Profit or Loss- Ruchi</title>
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
+
 <body>
-    <main> 
+    <main>
         <div class="wrapper">
-            <h1> Profit or Loss?  </h1>
-            <!-- <form action="#0"> -->
+            <h1> Profit or Loss? </h1>
 
-                <div class="userInp">
+            <p> Check here if you made profit or loss on your shares!</p>
 
-                    <label for="initialPrice"> Initial Price </label>
-                    <input id="initialPrice"   type="number" min="1" step="any" />
-
-                </div>
-                
-                <div class="userInp">
-                    <label for="quantity"> Quantity </label>
-                    <input id="quantity"   type="number" />
-
-                </div>
-
-                <div class="userInp">
-                    <label for="currentPrice"> Current Price </label>
-                    <input id="currentPrice"  type="number" min="1" step="any" >
-
-                </div>
+            <div class="userInp">
+                <label for="initialPrice"> Initial Price </label>
+                <input id="initialPrice" type="number" min="1" step="any" />
 
 
-                <button id="btn-tell"> Tell Me! </button>
 
-                <div id="displayOutput"> </div>
+            </div>
 
-            <!-- </form> -->
+            <div class="userInp">
+                <label for="quantity"> Quantity </label>
+                <input id="quantity" type="number" />
+            </div>
 
-           
-                <h2 id="trying"> </h2>
-    
-    
-    
-    
+            <div class="userInp">
+
+                <label for="currentPrice"> Current Price </label>
+                <input id="currentPrice" type="number" min="1" step="any">
+            </div>
+
+            <button id="btn-tell"> Tell Me! </button>
+
+            <div id="displayOutput"> </div>
+
         </div>
-
     </main>
 
     <script src="/scripts/scripts.js"></script>
 </body>
+
 </html>
