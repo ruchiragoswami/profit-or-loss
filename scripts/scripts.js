@@ -15,8 +15,7 @@ function calculateProfitOrLoss(initialPrice, currentPrice, quantity) {
         let profitPercent = (profit / costPrice) * 100;
         profitPercent = profitPercent.toFixed(2);
 
-
-        displayOutput.style.color = "green";
+        displayOutput.style.color = "#86f114";
         displayOutput.innerText = `Yay! You made  a profit of  ${profit} & profit percentage is ${profitPercent}%`;
 
     } else if (sellingPrice < costPrice) {
@@ -24,22 +23,17 @@ function calculateProfitOrLoss(initialPrice, currentPrice, quantity) {
         let lossPercent = (loss / costPrice) * 100;
         lossPercent = lossPercent.toFixed(2);
 
-        displayOutput.style.color = "red";
+        displayOutput.style.color = "#f57ec7";
         displayOutput.innerText = `Awww... Loss is ${loss} & loss percentage is ${lossPercent}% `;
 
-    } else if (sellingPrice = costPrice) {
-
-        displayOutput.innerText = `Break-even! No profit, No loss`;
-        displayOutput.style.color = "blue";
     } else {
-        displayOutput.style.color = "firebrick";
-        displayOutput.innerText = `Please enter valid numbers in all the input fields.`
+        displayOutput.innerText = `Break-even! No profit, No loss`;
+        displayOutput.style.color = "#F1B814";
     }
 }
 
 
 function clickHandler() {
-
     let iniPri = initialPrice.value;
     let qty = quantity.value;
     let currPri = currentPrice.value;
@@ -47,8 +41,7 @@ function clickHandler() {
     if (iniPri <= 0 || currPri <= 0 || qty <= 0) {
         displayOutput.innerText = "Please verify the numbers again!";
         // stocks can reach upto 0, but trading is not possible at or below 0
-
-    } else {        
+    } else {
         calculateProfitOrLoss(iniPri, currPri, qty);
     }
 }
