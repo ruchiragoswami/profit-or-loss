@@ -1,3 +1,18 @@
 body {
     /* background-color:  ; */
+    margin: 0;
+    padding: 0; 
+    text-align: center;
+}
+
+
+.userInp {
+    margin: 1rem;
+}
+
+label {
+    width: 4rem;
+    /* border: 1px solid red;  */
+    padding: 0 1rem;
+    margin-right: 1rem; ;
 }
