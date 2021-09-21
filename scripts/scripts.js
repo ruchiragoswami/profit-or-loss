@@ -15,8 +15,21 @@ let displayOutput = document.querySelector("#displayOutput");
 // } 
 // extractValues(initialPrice, quantity, currentPrice);
 
- function calculateProfitOrLoss(initialPrice, currentPrice, quantity)  {
-    //  console.log("hello " + initialPrice + " " + currentPrice + " " + quantity); 
+// function zeroNegValidate(param1, param2, param3) {
+//     if (param1 <= 0 || param2 <=0 || param3 <0) {
+//         displayOutput.innerText = "Please check the input numbers again! Must be positive";
+//         console.log("you are tricking me. negatives added")
+//     } else {
+//         console.log("no negatives added"); 
+//     }
+// }
+
+
+
+function calculateProfitOrLoss(initialPrice, currentPrice, quantity)  {
+//  console.log("hello " + initialPrice + " " + currentPrice + " " + quantity); 
+  
+    
 
     let costPrice = initialPrice * quantity;
     let sellingPrice = currentPrice * quantity; 
@@ -24,30 +37,43 @@ let displayOutput = document.querySelector("#displayOutput");
     if (sellingPrice > costPrice) {
         let profit = sellingPrice - costPrice;       
         let profitPercent = (profit/costPrice)*100; 
+         profitPercent = profitPercent.toFixed(2);
 
-        console.log(profit + " is profit made and percentage profit is " + profitPercent );
+        // console.log(profit + " is profit made and percentage profit is " + profitPercent );
+
+        displayOutput.style.color = "green"; 
+        displayOutput.innerText = `Yay! You made  a profit of  ${profit} & profit percentage is ${profitPercent}`; 
+
     } else if (sellingPrice < costPrice) {
         let loss = costPrice - sellingPrice;
         let lossPercent = (loss/costPrice)*100; 
+        lossPercent = lossPercent.toFixed(2); 
 
-        console.log("Aww... Loss is " + loss + ". loss percentage is " + lossPercent); 
-    }
+        // console.log("Aww... Loss is " + loss + ". loss percentage is " + lossPercent); 
 
+        displayOutput.style.color="red"; 
+        displayOutput.innerText = `Awww... Loss is ${loss} & loss percentage is ${lossPercent} ` ;
 
+    }   else if (sellingPrice = costPrice) {
 
-
-   
-
- }
+        displayOutput.innerText = `Break-even! No profit, No loss`;
+        displayOutput.style.color="blue"; 
+    }   else {
+        displayOutput.style.color="firebrick"; 
+        displayOutput.innerText= `Please enter valid numbers in all the input fields.`
+    }      
+}
 
  
 
-function clickHandler() {   
-
-    // console.log("No worries" + initialPrice.value+ " quantity " + quantity.value + " currentPrice is : " + currentPrice.value);
-   
-calculateProfitOrLoss(initialPrice.value, currentPrice.value, quantity.value); 
-
+function clickHandler() {  
+    if (initialPrice.value <= 0 || currentPrice.value <=0 || quantity.value <= 0) {
+        displayOutput.innerText = "Stock Trading at 0 is not possible. Please verify the numbers again!";
+        console.log("you are tricking me. negatives added")
+    } else {
+        console.log("no negatives added"); 
+        calculateProfitOrLoss(initialPrice.value, currentPrice.value, quantity.value); 
+    }
 
 
 }
@@ -58,4 +84,4 @@ calculateProfitOrLoss(initialPrice.value, currentPrice.value, quantity.value);
 
 
 
-tellMe.addEventListener("click", clickHandler)
+tellMe.addEventListener("click", clickHandler);
